@@ -1,0 +1,608 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Introduction &#8212; F3M 1.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=f9c1cefe"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'architecture';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Getting Started" href="start.html" />
+    <link rel="prev" title="F3M Documentation Home" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/F3M_logo.png" class="logo__image only-light" alt="F3M 1.0.0 documentation - Home"/>
+    <script>document.write(`<img src="_static/F3M_logo.png" class="logo__image only-dark" alt="F3M 1.0.0 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="index.html">F3M Documentation Home</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="start.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="computeconcern.html">Compute Considerations</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="blocks.html">Blocks</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="common_blocks/list.html">Common Blocks</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/c2d.html">Continuous to Discrete</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/cust_GN.html">Custom Source Generator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/d2c.html">Discrete to Continuous</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/entity_hold_L.html">Entity Hold (Level)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/entity_hold_P.html">Entity Hold (Periodic)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/entity_hold_R.html">Entity Hold (Rate)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/entity_hold_S.html">Entity Hold (Surge)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/entity_m_loss.html">Entity Material Loss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/entity_process_h.html">Entity Process and Hold</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/entity_s_select.html">Entity Species Selector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/flow_batch_g.html">Flow Batcher (Generic)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/flow_batch_s.html">Flow Batcher (Surge)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/inv_batch_g.html">Inventory Batcher (Generic)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/mapit_IO_continuous.html">Continuous MAPIT Recorder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/mapit_IO_discrete.html">Discrete MAPIT Recorder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/s_select.html">Signal Species Selector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/sig_P.html">Signal Process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/signal_m_loss.html">Signal Material Loss</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="purex_blocks/list.html">PUREX Blocks</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="purex_blocks/aq_pr_cont1.html">Aqueous Process (Continuous - 1 Stage)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="purex_blocks/aq_pr_disc2.html">Aqueous Process (Discrete - 2 Stage)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="purex_blocks/cont_tank_g.html">Continuous Tank (Generic)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="purex_blocks/cont_tank_s.html">Continuous Tank (Surge)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="purex_blocks/entity_mix_tank.html">Entity Mixing Tank</a></li>
+<li class="toctree-l3"><a class="reference internal" href="purex_blocks/sample_tank.html">Sample Tank</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="helper_functions.html">Helper Functions</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-gitlab"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://cee-gitlab.sandia.gov/snl_sg/F3M/-/blob/master/docs/build/html/architecture.md" target="_blank"
+   class="btn btn-sm btn-source-file-button dropdown-item"
+   title="Show source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">Show source</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://cee-gitlab.sandia.gov/snl_sg/F3M/-/edit/master/docs/build/html/architecture.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://cee-gitlab.sandia.gov/snl_sg/F3M/-/issues/new?issue[title]=Issue%20on%20page%20%2Farchitecture.html&issue[description]=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/architecture.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introduction</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture">Architecture</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#design">Design</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#units">Units</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<p>The Fissile Facility Flow Modeler (F3M) is a largely open source library of plug-and-play modules (blocks) intended to facilitate the development of nuclear facility models in MATLAB Simulink for safeguards research. F3M is designed for modeling material flows and operations for a variety of different facility types without specific operational details. Blocks expose  parameters that correspond to generic properties such as batch target size, residual/heel size, processing time, and separation efficiencies but does <em>not</em> describe the dimensions or mechanics for <em>how</em> this process might be carried out. The most relevant details for safeguards research are material flows, quantities, and timings, which is the primary focus of this library.</p>
+<p>The purpose of these documents is to describe the design philosophies behind and implementation of F3M. Users who become familiar with these documents should then be able to construct a complete generic model of a simple nuclear facility if provided the correspond flow sheet. This guide starts with important design concepts before providing a brief introduction to a simple model (<a class="reference internal" href="start.html"><span class="std std-doc">Getting Started</span></a>) followed by important considerations for robust model design (<a class="reference internal" href="computeconcern.html"><span class="std std-doc">Compute Concerns</span></a>). Finally, we invite users to contribute to the development of F3M through the addition of new modules. Some basic <a class="reference internal" href="#./contrib.md"><span class="xref myst">contribution guidelines</span></a> are provided.</p>
+<p>Completed models using the F3M library are available in a separate software component called the Separation and Safeguards Performance Model Library (SSPM-L). SSPM-L is controlled unclassified information (CUI) and is only available upon request. Please contact <a class="reference external" href="mailto:MAPIT-dev&#37;&#52;&#48;sandia&#46;gov">MAPIT-dev<span>&#64;</span>sandia<span>&#46;</span>gov</a> for more details.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>F3M requires <a class="reference external" href="https://www.mathworks.com/products/matlab.html">MATLAB</a>, <a class="reference external" href="https://www.mathworks.com/products/simulink.html">Simulink</a>, and <a class="reference external" href="https://www.mathworks.com/products/simevents.html">SimEvents</a> to use</p>
+</div>
+<section id="architecture">
+<h2>Architecture<a class="headerlink" href="#architecture" title="Link to this heading">#</a></h2>
+<section id="design">
+<h3>Design<a class="headerlink" href="#design" title="Link to this heading">#</a></h3>
+<p>The primary object of F3M is to simulate the flow of nuclear material in a facility. This is accomplished by representing a flow sheet as a series of discrete unit operations. Since F3M is primarily concerned with flow magnitude and timing, blocks in the F3M library lack specific operational details such as tank dimensions or solution temperatures.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Ports on F3M blocks (locations where blocks are connected together) have either a <code class="docutils literal notranslate"><span class="pre">(C)</span></code> or <code class="docutils literal notranslate"><span class="pre">(D)</span></code> label to indicate that a port is either continuous (signal) or discrete (entity). Inventory calculations always result in output ports that are continuous.</p>
+</div>
+<p>F3M tracks 1675 different isotopes that correspond to most isotopes tracked in the <a class="reference external" href="https://www.ornl.gov/scale">SCALE code system</a>. There are also two additional unassigned, user configurable slots at index 1676 and 1677. By default, the configurable slots have no impact on the operation of F3M blocks, but allow for further user customization. For example, slot at index 1676 might indicate how many times an item has passed through a loop. F3M implements tracking of the isotopic indices and user configurable slots as a single array with shape <span class="math notranslate nohighlight">\([1677,1]\)</span>. The public version of F3M does not include any isotopic concentration data and requires users to bring their own data or otherwise specify source data. The developers do have a ready-made spent fuel isotopic database for use in F3M, but it is distributed on a case-by-case basis. If you are interested, contact the developers at <a class="reference external" href="mailto:MAPIT-dev&#37;&#52;&#48;sandia&#46;gov">MAPIT-dev<span>&#64;</span>sandia<span>&#46;</span>gov</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>F3M includes several convenience functions to help make accessing data easier. For example, <code class="docutils literal notranslate"><span class="pre">F3_getArrayPos</span></code> can be used to return the array position(s) of the element or isotope string.</p>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Elemental and isotopic specification in F3M is done by referencing elemental or isotopic letter from the elemental table. When specifying isotopes, do not use a hyphen; specify as <code class="docutils literal notranslate"><span class="pre">u</span></code> or <code class="docutils literal notranslate"><span class="pre">u238</span></code>. Retrieving a specific isotope returns a single index whereas retrieving an element returns multiple indices. These indices correspond to all isotopes of that element and must be summed to find the total quantity of interest for that element.</p>
+<p>F3M also provides the keyword <code class="docutils literal notranslate"><span class="pre">all</span></code> to select all isotopes. The additional user defined attributes are accessed by specifying <code class="docutils literal notranslate"><span class="pre">at1</span></code> or <code class="docutils literal notranslate"><span class="pre">at2</span></code> which correspond to index 1676 and 1677 respectively.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">F3_getArrayPos</span><span class="p">(</span><span class="s">&#39;u238&#39;</span><span class="p">)</span>
+
+<span class="nb">ans</span><span class="w"> </span><span class="p">=</span>
+
+<span class="w">        </span><span class="mi">1601</span>
+
+<span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">F3_getArrayPos</span><span class="p">(</span><span class="s">&#39;u&#39;</span><span class="p">)</span>
+
+<span class="nb">ans</span><span class="w"> </span><span class="p">=</span>
+
+<span class="w">        </span><span class="mi">1593</span><span class="w">        </span><span class="mi">1594</span><span class="w">        </span><span class="mi">1595</span><span class="w">        </span><span class="mi">1596</span><span class="w">        </span><span class="mi">1597</span><span class="w">        </span><span class="mi">1598</span><span class="w">        </span><span class="mi">1599</span><span class="w">        </span><span class="mi">1600</span><span class="w">        </span><span class="mi">1601</span><span class="w">        </span><span class="mi">1602</span><span class="w">        </span><span class="mi">1603</span><span class="w">        </span><span class="mi">1604</span><span class="w">        </span><span class="mi">1605</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="docutils">
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="common_blocks/s_select.html"><span class="std std-doc">Continuous Signal Selector</span></a>, <a class="reference internal" href="common_blocks/entity_s_select.html"><span class="std std-doc">Entity Species Selector</span></a></p>
+</div>
+</div>
+<p>Material flows in F3M are either continuous (e.g., flow of solution through a pipe), discrete (e.g., periodic recept of input materials), or somewhere in between (e.g., a tank that periodically fills and empties). Discrete representations are performed using <a class="reference external" href="https://www.mathworks.com/help/simevents/gs/role-of-entities-in-simevents-models.html">Simevents entities</a> whereas continuous representations are done using <a class="reference external" href="https://www.mathworks.com/help/simulink/ug/signal-basics.html">Simulink signals</a>.</p>
+<p>F3M uses discrete representations in the form of entities wherever possible. Entities often result in faster model simulations and better numerical consistency (see <a class="reference internal" href="computeconcern.html"><span class="std std-doc">this section</span></a> for further details) and often have a more intuitive representation. Specifically, entities are discrete units with attributes that move throughout the model. In F3M, they have primarily have a single attribute, <code class="docutils literal notranslate"><span class="pre">isovec</span></code>,  that contains the isotopic masses that the entity represents.</p>
+<p>As a concrete example, consider fresh fuel storage area that accumulates fresh fuel over time. The inventory of the fresh fuel storage area is conveniently represented using a signal (i.e., the inventory can be represented as a continuous quantity over time). Tracking inventory with discrete fresh fuel entities would be straightforward; arriving entities add their |isovec| value to the inventory where as departing fresh fuel entities would remove their <code class="docutils literal notranslate"><span class="pre">isovec</span></code> from the inventory signal.</p>
+<p>In contrast, a continuous representation of a fresh fuel assembly is more difficult to model. Simulink signals originate from a <a class="reference external" href="https://www.mathworks.com/help/simulink/slref/signalgenerator.html">signal generator</a> that can create a variety of signal shapes. One straightforward representation of an item would be a square pulse that integrates to the total mass of the item. There is infinitely many combinations of pulse width and pulse height that could integrate to an item’s value, but determining which combination of pulse width and height is not readily apparent. There are additional challenges with integrating such continuous representations which is described further in <a class="reference internal" href="computeconcern.html"><span class="std std-doc">the compute section</span></a>.</p>
+<p>However, there are some places where continuous representations make sense and are even required. For example, consider a tank that periodically fills and empties some solution. The flows in and out could each be represented by a square pulse. The amplitude would be zero when there was no flow and non-zero when there is flow. The amplitude would then correspond to the flow. Integration of the square pulse over an interval of time would result in the total amount of material entering or leaving the tank for that interval.</p>
+<!-- MAPIT interafaces -->
+<p>F3M is designed to simulate system-level safeguards-relevant data streams that can be readily used with the Material Accountancy Performance Indicator Toolkit (MAPIT). MAPIT calculates key safeguards metrics like inventory difference or cumulative inventory difference. F3M has been designed to interface with MAPIT without the need for extensive setup by the user. MAPIT requires data for each key measurement point used in a material balance calculation. This includes input, output, and inventory terms. Flow terms, which are often input and/or output terms, require careful consideration as they must be correctly integrated to calculate the correct material balance value. Inventory terms provided by most F3M blocks can be simply recorded using a <code class="docutils literal notranslate"><span class="pre">To</span> <span class="pre">Workspace</span></code> block from the base Simulink library with a sample time of 1 and a format of <code class="docutils literal notranslate"><span class="pre">Structure</span> <span class="pre">with</span> <span class="pre">Time</span></code>. However, flow terms require the use of the <code class="docutils literal notranslate"><span class="pre">MAPIT</span> <span class="pre">Input/Output</span> <span class="pre">Recorder</span></code> block.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>MAPIT only supports only flows for inputs and outputs as of v1.4.6, although a future update will enable discrete items to also be used.</p>
+</div>
+</section>
+<section id="implementation">
+<h3>Implementation<a class="headerlink" href="#implementation" title="Link to this heading">#</a></h3>
+<p>F3M is consists of a series of lego-like blocks that are designed to be connected together to collectively form a nuclear facility model that focuses on flows and timing of nuclear material. An example of some of the blocks can be seen below.</p>
+<!-- This needs theme support -->
+<a class="bg-primary reference internal image-reference" href="_images/F3_common_overV2Light.png"><img alt="_images/F3_common_overV2Light.png" class="bg-primary align-center" src="_images/F3_common_overV2Light.png" style="width: 100%;" />
+</a>
+<br>
+<p>The blocks are designed to be reused for multiple processes by changing their parameters. For example, an entity process and hold could represent an evaporation or separation process depending on how the block parameters are setup. F3M is designed such that every block has a easy-to-use <a class="reference external" href="https://www.mathworks.com/help/simulink/ug/block-masks.html">mask</a> to control key parameters. An example of the F3M mask dialog is shown below.</p>
+<a class="bg-primary reference internal image-reference" href="_images/F3EX2.png"><img alt="_images/F3EX2.png" class="bg-primary align-center" src="_images/F3EX2.png" style="width: 50%;" />
+</a>
+</section>
+<section id="units">
+<h3>Units<a class="headerlink" href="#units" title="Link to this heading">#</a></h3>
+<p>Simulink and Simevents don’t make assumptions about the units of the underlying model. Time steps can be anything, seconds, minutes, hours, or whatever is required. The most important thing is that units are consistent across blocks or otherwise properly converted. In our examples, F3M assumes units of kg for mass, hours for time (i.e., 1 time-step = 1 hour), and liters for volume.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">F3M Documentation Home</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="start.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Getting Started</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture">Architecture</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#design">Design</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#units">Units</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Sandia Nuclear Fuel Cycle and Safeguards Group
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, NTESS.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

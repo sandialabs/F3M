@@ -1,0 +1,620 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Getting Started &#8212; F3M 1.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=f9c1cefe"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'start';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Compute Considerations" href="computeconcern.html" />
+    <link rel="prev" title="Introduction" href="architecture.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/F3M_logo.png" class="logo__image only-light" alt="F3M 1.0.0 documentation - Home"/>
+    <script>document.write(`<img src="_static/F3M_logo.png" class="logo__image only-dark" alt="F3M 1.0.0 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="index.html">F3M Documentation Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Introduction</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="computeconcern.html">Compute Considerations</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="blocks.html">Blocks</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="common_blocks/list.html">Common Blocks</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/c2d.html">Continuous to Discrete</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/cust_GN.html">Custom Source Generator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/d2c.html">Discrete to Continuous</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/entity_hold_L.html">Entity Hold (Level)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/entity_hold_P.html">Entity Hold (Periodic)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/entity_hold_R.html">Entity Hold (Rate)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/entity_hold_S.html">Entity Hold (Surge)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/entity_m_loss.html">Entity Material Loss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/entity_process_h.html">Entity Process and Hold</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/entity_s_select.html">Entity Species Selector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/flow_batch_g.html">Flow Batcher (Generic)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/flow_batch_s.html">Flow Batcher (Surge)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/inv_batch_g.html">Inventory Batcher (Generic)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/mapit_IO_continuous.html">Continuous MAPIT Recorder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/mapit_IO_discrete.html">Discrete MAPIT Recorder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/s_select.html">Signal Species Selector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/sig_P.html">Signal Process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/signal_m_loss.html">Signal Material Loss</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="purex_blocks/list.html">PUREX Blocks</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="purex_blocks/aq_pr_cont1.html">Aqueous Process (Continuous - 1 Stage)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="purex_blocks/aq_pr_disc2.html">Aqueous Process (Discrete - 2 Stage)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="purex_blocks/cont_tank_g.html">Continuous Tank (Generic)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="purex_blocks/cont_tank_s.html">Continuous Tank (Surge)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="purex_blocks/entity_mix_tank.html">Entity Mixing Tank</a></li>
+<li class="toctree-l3"><a class="reference internal" href="purex_blocks/sample_tank.html">Sample Tank</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="helper_functions.html">Helper Functions</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-gitlab"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://cee-gitlab.sandia.gov/snl_sg/F3M/-/blob/master/docs/build/html/start.md" target="_blank"
+   class="btn btn-sm btn-source-file-button dropdown-item"
+   title="Show source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">Show source</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://cee-gitlab.sandia.gov/snl_sg/F3M/-/edit/master/docs/build/html/start.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://cee-gitlab.sandia.gov/snl_sg/F3M/-/issues/new?issue[title]=Issue%20on%20page%20%2Fstart.html&issue[description]=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/start.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Getting Started</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h1>
+<p>This section will illustrate a simple example of how F3M can be used to simulate flows of material. Specifically, this section presents a step-by-step guide to simulate the decladding of a fresh fuel assembly.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Ensure that the folder containing F3M is on your MATLAB path. This can be done by right clicking on the folder inside the MATLAB explorer, selecting <em>add to path</em> then <em>all folders and subfolders</em>. If F3M is properly installed, you will see F3M in the library browser when a Simulink model is open:</p>
+<a class="bg-primary reference internal image-reference" href="_images/browse0.png"><img alt="_images/browse0.png" class="bg-primary align-center" src="_images/browse0.png" style="width: 25%;" />
+</a>
+</div>
+<p>Start by placing a custom source generator into a blank model. This block can be found in the F3M common library and is the source of material for this example. The custom source block has a few parameters:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Item</span> <span class="pre">Size</span> <span class="pre">(kg)</span></code></p>
+<ul>
+<li><p>This is the total size of the entity that leaves</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Item</span> <span class="pre">period</span> <span class="pre">(hr)</span></code></p>
+<ul>
+<li><p>The frequency with which entities are creates</p></li>
+</ul>
+</li>
+<li><p>Mass Fraction table</p>
+<ul>
+<li><p>The distribution of mass, defined by <code class="docutils literal notranslate"><span class="pre">Item</span> <span class="pre">Size</span></code> across the entity.</p></li>
+<li><p>These values should sum to 1, although there is no explicit check that occurs in F3M.</p></li>
+</ul>
+</li>
+</ul>
+<p>Make a few assumptions about the fuel assembly (note these values do not necessarily reflect a real assembly and are for illustrative purposes):</p>
+<ul class="simple">
+<li><p>Facility operational time per year: 10 days</p>
+<ul>
+<li><p>240 hours per year</p></li>
+</ul>
+</li>
+<li><p>Facility thoughput: 1 MT uranium</p></li>
+<li><p>Fuel assembly total mass: 250kg</p></li>
+<li><p>Assembly composition:</p>
+<ul>
+<li><p>40% U</p></li>
+<li><p>20% O</p></li>
+<li><p>40% 304 Stainless Steel</p>
+<ul>
+<li><p>0.03% C</p></li>
+<li><p>18 % Cr</p></li>
+<li><p>2 % Mn</p></li>
+<li><p>8% Ni</p></li>
+<li><p>0.10 % N</p></li>
+<li><p>0.045 % P</p></li>
+<li><p>0.75% Si</p></li>
+<li><p>0.030 % S</p></li>
+<li><p>71.045% Fe</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Using the assumed information, the parameters for the custom source block are as follows:</p>
+<ul class="simple">
+<li><p>Item Size: 250</p></li>
+<li><p>Item Period: 60</p>
+<ul>
+<li><p>Facility Throughput = <span class="math notranslate nohighlight">\(\approx\)</span> 4.2 kg/hr</p></li>
+<li><p>250/(1000/240)</p></li>
+</ul>
+</li>
+<li><p>Mass Fractions:</p>
+<ul>
+<li><p>U 0.40</p></li>
+<li><p>O 0.20</p></li>
+<li><p>0.00012 C</p></li>
+<li><p>0.072 Cr</p></li>
+<li><p>0.008 Mn</p></li>
+<li><p>0.032 Ni</p></li>
+<li><p>0.004 N</p></li>
+<li><p>0.00018 P</p></li>
+<li><p>0.003 Si</p></li>
+<li><p>0.00012 S</p></li>
+<li><p>0.28148 Fe</p></li>
+</ul>
+</li>
+</ul>
+<p>After placing the block and entering the information above, your model should have a single block, similar to this image:</p>
+<a class="bg-primary reference internal image-reference" href="_images/g1.png"><img alt="_images/g1.png" class="bg-primary align-center" src="_images/g1.png" style="width: 75%;" />
+</a>
+<br>
+<p>Next, assume there is a buffer storage area. Buffer areas are common in bulk facilities as they allow for variation in downstream processes. This can be simulated using an <code class="docutils literal notranslate"><span class="pre">Entity</span> <span class="pre">Hold</span> <span class="pre">(Level)</span></code> block. In this case, assume a hold level of 2 and a process time of 30. From the documentation on the entity process and hold block:</p>
+<blockquote>
+<div><p>An optional process time is available which applies a time delay to an entity <em>after</em> it leaves the queue. This parameter can control how quickly entities are able to leave after the level set point has been reached.</p>
+</div></blockquote>
+<p>The process time is set to 30, the same as the fresh fuel generator periodicity, to maintain the level of fuel in the buffer. Otherwise, the entire inventory of fuel would leave the buffer once the level was reached.</p>
+<p>Connect the fresh fuel generator to the newly created hold block by dragging the outport of the generator to the inport of the buffer area as shown below:</p>
+<a class="bg-primary reference internal image-reference" href="_images/g2.png"><img alt="_images/g2.png" class="bg-primary align-center" src="_images/g2.png" style="width: 75%;" />
+</a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Blocks can be renamed by double clicking the text area below the block. In the figure above, we have added the label <code class="docutils literal notranslate"><span class="pre">Fresh</span> <span class="pre">Fuel</span> <span class="pre">Generator</span></code>.</p>
+</div>
+<p>The cladding removal process can now be added and connected to the buffer block. This can be accomplished by using an <code class="docutils literal notranslate"><span class="pre">Entity</span> <span class="pre">Process</span> <span class="pre">and</span> <span class="pre">Hold</span> <span class="pre">Block</span></code>. This block provides parameters for processing time and fractions of material going to the <code class="docutils literal notranslate"><span class="pre">Rmvd</span> <span class="pre">(D)</span></code> stream. Specifically, this block will process entities and create both for the entity with the removed material and a separate entity representing removed material.</p>
+<p>Assume that 99% of the cladding material is removed in this process. Specifying this operations can be done in one of two ways. The first would be to manually list all of the elements in 304 stainless steel (the assumed cladding material) and set all of their reduction multipliers to 0.99, which indicated 99% of the material is removed. The second way to specify this operation is to note that the reduction multipliers are processed in sequence, from first to last, as specified in the <a class="reference internal" href="common_blocks/list.html"><span class="std std-doc">block documentation</span></a>. Later entries overwrite earlier entries. So in the second method of specification, we can define all materials, using keyword <code class="docutils literal notranslate"><span class="pre">all</span></code>, to be removed at 99% and then overwrite the entries for U and O to be 0%. This way, many fewer entries need to be entered into the reduction multiplier table.</p>
+<p>The figure below shows the connected process and hold block with the specified reduction multipliers. Specifying <code class="docutils literal notranslate"><span class="pre">all</span></code> and then overwriting the reduction multipliers for specific elements or isotopes can be an effective way to represent a process while reducing the number of entries in the table. This can also be done for elements; specifying an element then a specific isotope can be an easier way to specify process separations in some cases.</p>
+<a class="bg-primary reference internal image-reference" href="_images/g3.png"><img alt="_images/g3.png" class="bg-primary align-center" src="_images/g3.png" style="width: 75%;" />
+</a>
+<p>Next, configure the simulation properties; under the <code class="docutils literal notranslate"><span class="pre">modeling</span></code> ribbon, select <code class="docutils literal notranslate"><span class="pre">model</span> <span class="pre">settings</span></code>:</p>
+<ul class="simple">
+<li><p><strong>Solver</strong>: ode45</p></li>
+<li><p><strong>Max step size</strong>: 1</p></li>
+</ul>
+<p>Constraining the max step size leads to more reasonable simulation results, although feel free to try different values or leave it on auto.</p>
+<p>Finally, the blocks need to be connected to data logging capabilities. Ensure the model is working as expected by connecting <code class="docutils literal notranslate"><span class="pre">Entity</span> <span class="pre">Species</span> <span class="pre">Selectors</span></code> to the <code class="docutils literal notranslate"><span class="pre">Res(D)</span></code> and <code class="docutils literal notranslate"><span class="pre">Rmvd(D)</span></code> ports of cladding removal. Enter <code class="docutils literal notranslate"><span class="pre">Fe</span></code> for both elements. Next, connect signal species selectors with element <code class="docutils literal notranslate"><span class="pre">U</span></code> selected in the dialog to the inventories of the fresh fuel buffer and cladding removal. Attach a sum of elements followed by a scope to the <code class="docutils literal notranslate"><span class="pre">Slct(C)</span></code> port for all the species selector blocks. The completed model should look like the figure below.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Selector blocks output all isotopes when an element is selected. The sum of elements block sums across all isotopes to result in a single value for elemental mass.</p>
+</div>
+<a class="bg-primary reference internal image-reference" href="_images/g4.png"><img alt="_images/g4.png" class="bg-primary align-center" src="_images/g4.png" style="width: 75%;" />
+</a>
+<p>Simulate the model with a stop time of 240, which corresponds to our operational year. Review the scopes to verify that the majority of the cladding materials are going into the <code class="docutils literal notranslate"><span class="pre">Rmvd(D)</span></code> stream. Also review the inventories to check the behavior of the buffer and cladding removal step. The buffer should grow to a level of two and periodically output material. Cladding removal should be mostly empty as the processing time is much shorter than the frequency of material input.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The throughput for the first 240 hours will be less than the specified 1 MT U as some material is used to fill the fresh fuel buffer.</p>
+</div>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="architecture.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introduction</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="computeconcern.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Compute Considerations</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Sandia Nuclear Fuel Cycle and Safeguards Group
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, NTESS.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

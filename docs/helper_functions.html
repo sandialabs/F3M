@@ -1,0 +1,933 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Helper Functions &#8212; F3M 1.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=f9c1cefe"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'helper_functions';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Sample Tank" href="purex_blocks/sample_tank.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/F3M_logo.png" class="logo__image only-light" alt="F3M 1.0.0 documentation - Home"/>
+    <script>document.write(`<img src="_static/F3M_logo.png" class="logo__image only-dark" alt="F3M 1.0.0 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="index.html">F3M Documentation Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="start.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="computeconcern.html">Compute Considerations</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="blocks.html">Blocks</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="common_blocks/list.html">Common Blocks</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/c2d.html">Continuous to Discrete</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/cust_GN.html">Custom Source Generator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/d2c.html">Discrete to Continuous</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/entity_hold_L.html">Entity Hold (Level)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/entity_hold_P.html">Entity Hold (Periodic)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/entity_hold_R.html">Entity Hold (Rate)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/entity_hold_S.html">Entity Hold (Surge)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/entity_m_loss.html">Entity Material Loss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/entity_process_h.html">Entity Process and Hold</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/entity_s_select.html">Entity Species Selector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/flow_batch_g.html">Flow Batcher (Generic)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/flow_batch_s.html">Flow Batcher (Surge)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/inv_batch_g.html">Inventory Batcher (Generic)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/mapit_IO_continuous.html">Continuous MAPIT Recorder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/mapit_IO_discrete.html">Discrete MAPIT Recorder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/s_select.html">Signal Species Selector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/sig_P.html">Signal Process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common_blocks/signal_m_loss.html">Signal Material Loss</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="purex_blocks/list.html">PUREX Blocks</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="purex_blocks/aq_pr_cont1.html">Aqueous Process (Continuous - 1 Stage)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="purex_blocks/aq_pr_disc2.html">Aqueous Process (Discrete - 2 Stage)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="purex_blocks/cont_tank_g.html">Continuous Tank (Generic)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="purex_blocks/cont_tank_s.html">Continuous Tank (Surge)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="purex_blocks/entity_mix_tank.html">Entity Mixing Tank</a></li>
+<li class="toctree-l3"><a class="reference internal" href="purex_blocks/sample_tank.html">Sample Tank</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Helper Functions</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-gitlab"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://cee-gitlab.sandia.gov/snl_sg/F3M/-/blob/master/docs/build/html/helper_functions.rst" target="_blank"
+   class="btn btn-sm btn-source-file-button dropdown-item"
+   title="Show source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">Show source</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://cee-gitlab.sandia.gov/snl_sg/F3M/-/edit/master/docs/build/html/helper_functions.rst" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://cee-gitlab.sandia.gov/snl_sg/F3M/-/issues/new?issue[title]=Issue%20on%20page%20%2Fhelper_functions.html&issue[description]=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/helper_functions.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Helper Functions</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-functions">
+<span id="helper-functions"></span><h1>Helper Functions<a class="headerlink" href="#module-functions" title="Link to this heading">#</a></h1>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="F3_inventoryTracker">
+<span class="sig-name descname"><span class="pre">F3_inventoryTracker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">isovec</span></em>, <em class="sig-param"><span class="pre">utype</span></em><span class="sig-paren">)</span><a class="headerlink" href="#F3_inventoryTracker" title="Link to this definition">#</a></dt>
+<dd><p>Create a persistent inventory variable
+to track a block’s inventory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>isovec</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">array</span></code></span>) – An array of values that
+is used to update the persistent
+inventory variable.</p></li>
+<li><p><strong>utype</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">int</span></code></span>) – An interger used to describe what
+inventory update to perform. If
+<cite>utype</cite> is 1 then <cite>isovec</cite> is added
+to the inventory. Otherwise, <cite>isovec</cite>
+is subtracted from the inventory.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>y</dt><dd><p>The modified inventory after <cite>isovec</cite> has been
+added or subtracted.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="F3_ptableToGain">
+<span class="sig-name descname"><span class="pre">F3_ptableToGain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">tab</span></em>, <em class="sig-param"><span class="pre">sumtovalue</span></em><span class="sig-paren">)</span><a class="headerlink" href="#F3_ptableToGain" title="Link to this definition">#</a></dt>
+<dd><p>Converts a mask dialog table to gain array
+to be used with a continuous signal in F3M.
+Similar to <cite>F3_ptableToFlow</cite> but does not
+permit values outside the interval <span class="math notranslate nohighlight">\(\in[0,1]\)</span>.
+Commonly used to calculate values for gain blocks
+representin process modifications, but can be
+used for a variety of purposes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tab</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span> <span class="pre">array</span></code></span>) – Array containing entries that
+specify elements or isotopes
+to be modified. Column 1 specifies
+indicies of isovec to be modified
+whereas column 2 specifies the fracions
+to be applied.</p></li>
+<li><p><strong>sumtovalue</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">boolean</span></code></span>) – If true, then normalize
+the supplied fractions to 1</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>y</dt><dd><p>The gain array which has shape [1677,1] that contains
+values <span class="math notranslate nohighlight">\(\in[0,1]\)</span>.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="F3_ptableToArray">
+<span class="sig-name descname"><span class="pre">F3_ptableToArray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">tab</span></em>, <em class="sig-param"><span class="pre">sumtovalue</span></em><span class="sig-paren">)</span><a class="headerlink" href="#F3_ptableToArray" title="Link to this definition">#</a></dt>
+<dd><p>Convert a cell array from a mask dialog table
+into an array useable for downstream
+tasks. Typically used in loss and
+process blocks. Requires specified fractions
+in <cite>tab</cite> to be <span class="math notranslate nohighlight">\(\in[0,1]\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tab</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span> <span class="pre">array</span></code></span>) – Array containing entries that
+specify elements or isotopes
+to be modified. Column 1 specifies
+indicies of isovec to be modified
+whereas column 2 specifies the fracions
+to be applied.</p></li>
+<li><p><strong>sumtovalue</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">boolean</span></code></span>) – If true, then normalize
+the supplied fractions to 1</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>y</dt><dd><p>The modification array which has shape [2,n]. Column 1 specifies
+indicies of <cite>isovec</cite> whereas column2 specifies the modification
+fractions.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="F3_getIsoIdx">
+<span class="sig-name descname"><span class="pre">F3_getIsoIdx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#F3_getIsoIdx" title="Link to this definition">#</a></dt>
+<dd><p>Returns the index of isovec
+for the given isotope. Expects
+a string input with an element
+followed by the A number without
+any hyphenation. This function is
+not to be used for general purpose
+lookups, instead use the more flexible
+F3_getArrayPos function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – The isotope to find
+the array position of.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>y</dt><dd><p>The location in the isovec
+array where the isotope is
+located.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="F3_fmtTableExpr">
+<span class="sig-name descname"><span class="pre">F3_fmtTableExpr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">stin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#F3_fmtTableExpr" title="Link to this definition">#</a></dt>
+<dd><p>Evaluates a string containing mathematical
+expressions that contain variables defined
+in the model workspace. This function is used
+to evaluate input from F3M mask dialogs for
+use in downstream processing tasks. This block
+is only designed for simple expressions with
+defined variables in the model workspace.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This block is fairly simple and does
+not respect parenthetical ordering, instead
+it simply processes expressions in order from
+left to right.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>stin</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – A string containing a mathematical
+expression.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>y</dt><dd><p>The evaluated expression as a string.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">model_workspace</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">get_param</span><span class="p">(</span><span class="n">bdroot</span><span class="p">,</span><span class="s">&#39;ModelWorkspace&#39;</span><span class="p">);</span>
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="nb">assignin</span><span class="p">(</span><span class="n">model_workspace</span><span class="p">,</span><span class="s">&#39;x&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+<span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="nb">assignin</span><span class="p">(</span><span class="n">model_workspace</span><span class="p">,</span><span class="s">&#39;y&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">z</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="nb">assignin</span><span class="p">(</span><span class="n">model_workspace</span><span class="p">,</span><span class="s">&#39;z&#39;</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span>
+<span class="n">stin</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;x*y*z&quot;</span><span class="p">;</span>
+<span class="n">F3_fmtTableExpr</span><span class="p">(</span><span class="n">stin</span><span class="p">)</span>
+<span class="nb">ans</span><span class="w"> </span><span class="p">=</span>
+
+<span class="w">    </span><span class="s">&#39;30&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="F3_getElementSpan">
+<span class="sig-name descname"><span class="pre">F3_getElementSpan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#F3_getElementSpan" title="Link to this definition">#</a></dt>
+<dd><p>Retrieves the array indicies of
+isovec that correspond to the given
+element. Multiple indicies are returned
+if multiple isotopes of that element are
+tracked. This function is
+not to be used for general purpose
+lookups, instead use the more flexible
+F3_getArrayPos function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – The element to find
+the array positions of.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>y</dt><dd><p>The locations of isotopes tracked
+for the given element. The shape of
+the array is [n, 1] where n is the
+number of isotopes tracked.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="F3_calculateLossEntities">
+<span class="sig-name descname"><span class="pre">F3_calculateLossEntities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">isovec</span></em>, <em class="sig-param"><span class="pre">tab</span></em>, <em class="sig-param"><span class="pre">etype</span></em><span class="sig-paren">)</span><a class="headerlink" href="#F3_calculateLossEntities" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the removed entity component
+for use with various F3M process blocks.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Fractions specified in row 2 of <cite>tab</cite> must be <span class="math notranslate nohighlight">\(\in [0,1]\)</span>
+otherwise an exception will be thrown.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>isovec</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">array</span></code></span>) – A vector array with shape [1677, 1] that
+represents all isotopes tracked by F3M. This
+array is read from the attributes of the entity
+that is being modified by the F3M block.</p></li>
+<li><p><strong>tab</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">array</span></code></span>) – An array with shape [2, n] where n is the number of
+isotopes that are being modified. The first row,
+[1, :], contains the locations of isotopes that are
+being modified whereas the second row, [2, :] contains
+the corresponding fractions, <span class="math notranslate nohighlight">\(\in [0,1]\)</span> of the
+input, isovec, that should be removed.</p></li>
+<li><p><strong>etype</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">int</span></code></span>) – An integer used to indicate if the output corresponds
+to the removed component or the original component
+after modification. A value of 0 indicates that
+the modified component should be returned whereas
+any other value indicates the removed component
+should be returned.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>y</dt><dd><p>A vector with shape (1677,1) containing the 1675 isotopes
+tracked by F3M and two optional values at index 1676 and
+1676. The specific details for the values of y depend
+on the value passed for <cite>etype</cite>.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="F3_getLossFilter">
+<span class="sig-name descname"><span class="pre">F3_getLossFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">frac</span></em>, <em class="sig-param"><span class="pre">lossOverrideTab</span></em><span class="sig-paren">)</span><a class="headerlink" href="#F3_getLossFilter" title="Link to this definition">#</a></dt>
+<dd><p>Generate an array of fractions from parameters
+specified in a mask dialog. By default, this
+function generates an array of identical values
+that has the same shape as <cite>isovec</cite>, but
+individual values can be overriden by the
+override table provided in the mask dialog.</p>
+<p>This block does not account for any replacement
+material that might be specified in a replacement
+dialog table. The loss filter is “blind”
+to any replacement. Instead of calculating
+a net loss/replacement by considering both
+the loss and replacement specification together,
+they are considered separately as to differen terms.
+This is because it is more realistic to consider
+loss and replacement separately.</p>
+<p>For example, suppose a species is specified as
+both a loss component and replacement component.
+Rather than considering the net change, both terms
+are carried out in their entirety (i.e., loss
+followed by replacement/gain).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>frac</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – A float representing the fraction
+with which to reduce all species in
+<cite>isovec</cite>. Values should be <span class="math notranslate nohighlight">\(\in [0,1]\)</span>
+otherwise and exception will be thrown.</p></li>
+<li><p><strong>lossOverrideTab</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">array</span></code></span>) – A [N,2] shaped array where column 1
+represents isovec array indicies and
+column 2 represents fractions. These
+entries override the provided <cite>frac</cite>.
+Values should be <span class="math notranslate nohighlight">\(\in [0,1]\)</span>
+otherwise an exception will be thrown.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>y</dt><dd><p>An array with shape [1677,1] containing fractions <span class="math notranslate nohighlight">\(\in [0,1]\)</span>
+with which to reduce <cite>isovec</cite>.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="F3_ptableToFlow">
+<span class="sig-name descname"><span class="pre">F3_ptableToFlow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">tab</span></em>, <em class="sig-param"><span class="pre">sumtovalue</span></em><span class="sig-paren">)</span><a class="headerlink" href="#F3_ptableToFlow" title="Link to this definition">#</a></dt>
+<dd><p>Converts a mask dialog table to flow array
+to be used with a continuous signal in F3M.
+Similar to <cite>F3_ptableToGain</cite> but does not
+permit values outside the interval <span class="math notranslate nohighlight">\(\in[0,\infty]\)</span>
+This function is commonly used for calculating flows
+which can be greater than zero, but can be used
+for a variety of purposes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tab</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">cell</span> <span class="pre">array</span></code></span>) – Array containing entries that
+specify elements or isotopes
+to be placed into an array.
+Column 1 specifies indicies of
+isovec whereas column 2 specifies
+the values of the array.</p></li>
+<li><p><strong>sumtovalue</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">boolean</span></code></span>) – If true, then normalize
+the supplied fractions to 1</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>y</dt><dd><p>The flow array which has shape [1677,1] that contains
+values <span class="math notranslate nohighlight">\(\in[0,\infty]\)</span>.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="F3_getArrayPos">
+<span class="sig-name descname"><span class="pre">F3_getArrayPos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#F3_getArrayPos" title="Link to this definition">#</a></dt>
+<dd><p>Returns the array position(s) for
+the specified element or isotope in
+the F3M isovec array/attribute that
+is tracked throughtout F3M blocks.
+Elements should be specified as a
+lowercase string whereas isotopes
+should be specified as a element
+followed by the A number.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">F3_getArrayPos</span><span class="p">(</span><span class="s">&#39;c12&#39;</span><span class="p">)</span>
+<span class="nb">ans</span><span class="w"> </span><span class="p">=</span>
+
+<span class="w">    </span><span class="mi">19</span>
+
+<span class="n">F3_getArrayPos</span><span class="p">(</span><span class="s">&#39;c&#39;</span><span class="p">)</span>
+<span class="nb">ans</span><span class="w"> </span><span class="p">=</span>
+
+<span class="w">    </span><span class="mi">19</span><span class="w">    </span><span class="mi">20</span><span class="w">    </span><span class="mi">21</span><span class="w">    </span><span class="mi">22</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – The isotope or element that
+should be found. Can also include
+keywords <cite>at1</cite>, <cite>at2</cite>, and <cite>all</cite>.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>y</dt><dd><p>The location of the specified element, isotope,
+or keyword. For elements this is a [1,1] array
+whereas isotopes are [n, 1] where n is the number
+of tracked isotopes.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="F3_makeEntityIsos">
+<span class="sig-name descname"><span class="pre">F3_makeEntityIsos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">fuelIdx</span></em>, <em class="sig-param"><span class="pre">itemsize</span></em>, <em class="sig-param"><span class="pre">fuel_params</span></em><span class="sig-paren">)</span><a class="headerlink" href="#F3_makeEntityIsos" title="Link to this definition">#</a></dt>
+<dd><p>Initalize a spent fuel entity to be used
+in the SNF generator block.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function assumes the standard database organization
+described in the tutorial is followed. It must be
+modified if you use a non-standard database organization.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fuelIdx</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">int</span></code></span>) – Flag to indicate whether or not to randomize the fuel
+parameters. If 1, then chose a random combination of
+burnup, enrichment, and deacy. Otherwise, use the
+supplied values.</p></li>
+<li><p><strong>itemsize</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">float</span></code></span>) – Value to scale the database concentrations by. The
+database has values that are g/MTIHM so this must be
+scaled to units of kg using this user supplied value</p></li>
+<li><p><strong>fuel_params</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">array</span></code></span>) – <p>Array with shape [1, 5] that contains fuel
+parameter indicies. The indicies are as follows:</p>
+<ul>
+<li><p>1: burnup index for array <cite>b</cite></p></li>
+<li><p>2: enrichment index for array <cite>e</cite></p></li>
+<li><p>3: decay index for array <cite>c</cite></p></li>
+<li><p>4: optional attribute for isovec(1676)</p></li>
+<li><p>5: optional attribute for isovec(1677)</p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>y</dt><dd><p>A vector with shape (1677,1) containing the 1675 isotopes
+tracked by F3M and two optional values at index 1676 and
+1676. Used as the <cite>isovec</cite> attribute of a SNF entity.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="purex_blocks/sample_tank.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Sample Tank</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Sandia Nuclear Fuel Cycle and Safeguards Group
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, NTESS.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
